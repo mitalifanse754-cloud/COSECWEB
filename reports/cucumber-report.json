@@ -1,0 +1,85 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "assign-leave-to-user;add-paid-leave",
+        "keyword": "Scenario",
+        "line": 3,
+        "name": "Add Paid Leave",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 7221416800
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 8450751800
+            },
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "Open COSEC Web",
+            "match": {
+              "location": "src\\tests\\step-definitions\\leaveModule.steps.ts:4"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 3106646699
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "username",
+                      "password",
+                      "Validation"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "sa",
+                      "admin",
+                      "Welcome System Admin"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "When ",
+            "line": 5,
+            "name": "Login with user",
+            "match": {
+              "location": "src\\tests\\step-definitions\\leaveModule.steps.ts:13"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 1069939500
+            },
+            "keyword": "After",
+            "hidden": true
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "assign-leave-to-user",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Assign leave to user",
+    "tags": [],
+    "uri": "src\\tests\\features\\common.feature"
+  }
+]

@@ -1,0 +1,25 @@
+{
+  "name": "cosecweb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "cucumber-js --config config/cucumber.json",
+    "test:chrome": "set BROWSER=chromium&& cucumber-js --config config/cucumber.json",
+    "test:firefox": "set BROWSER=firefox&& cucumber-js --config config/cucumber.json",
+    "test:webkit": "set BROWSER=webkit&& cucumber-js --config config/cucumber.json",
+    "test:all": "concurrently \"npm run test:chrome\" \"npm run test:firefox\" \"npm run test:webkit\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@cucumber/cucumber": "^13.2.1",
+    "@playwright/test": "^1.62.1",
+    "@types/node": "^26.4.1",
+    "concurrently": "^10.0.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2"
+  }
+}
