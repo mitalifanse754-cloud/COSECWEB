@@ -4,15 +4,15 @@
     "elements": [
       {
         "description": "",
-        "id": "assign-leave-to-user;add-paid-leave",
+        "id": "assign-leave-to-user;leave-credit-scenario-for-period=-monthly,-credit-mode=-fixed,-leave-type=-paid-leave",
         "keyword": "Scenario",
         "line": 3,
-        "name": "Add Paid Leave",
+        "name": "Leave Credit Scenario for Period= Monthly, Credit Mode= Fixed, Leave Type= Paid Leave",
         "steps": [
           {
             "result": {
               "status": "passed",
-              "duration": 7221416800
+              "duration": 2273674799
             },
             "keyword": "Before",
             "hidden": true
@@ -20,12 +20,12 @@
           {
             "result": {
               "status": "passed",
-              "duration": 8450751800
+              "duration": 2463844900
             },
             "arguments": [],
             "keyword": "Given ",
             "line": 4,
-            "name": "Open COSEC Web",
+            "name": "Open Cosec Web",
             "match": {
               "location": "src\\tests\\step-definitions\\leaveModule.steps.ts:4"
             }
@@ -33,7 +33,7 @@
           {
             "result": {
               "status": "passed",
-              "duration": 3106646699
+              "duration": 928176900
             },
             "arguments": [
               {
@@ -55,7 +55,7 @@
                 ]
               }
             ],
-            "keyword": "When ",
+            "keyword": "And ",
             "line": 5,
             "name": "Login with user",
             "match": {
@@ -64,8 +64,251 @@
           },
           {
             "result": {
+              "status": "undefined",
+              "duration": 0
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "UserID"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "LMUr1"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "LMUr2"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "LMUr3"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "LMRic1"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "And ",
+            "line": 8,
+            "name": "Delete user via API"
+          },
+          {
+            "result": {
+              "status": "undefined",
+              "duration": 0
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "LeaveID",
+                      "LeaveName",
+                      "LeaveType",
+                      "MinAlwAtATime",
+                      "MaxAlwLimit",
+                      "MaxAllLimitFor",
+                      "MinAlwDur",
+                      "MaxAlwDurPerApp",
+                      "MaxAlwDurPerDay",
+                      "Validation"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "CD",
+                      "LM_CD_PaidLeave",
+                      "Paid Leave",
+                      "0.0",
+                      "99.0",
+                      "Single App",
+                      "",
+                      "",
+                      "",
+                      "Saved Successfully"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "And ",
+            "line": 14,
+            "name": "Create Leave"
+          },
+          {
+            "result": {
+              "status": "undefined",
+              "duration": 0
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "LeaveID"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "CD"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "And ",
+            "line": 17,
+            "name": "Create Leave Group \"LM_LeaveGrp_PaidLeave\" with Pro-rata \"False\""
+          },
+          {
+            "result": {
+              "status": "undefined",
+              "duration": 0
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "userid",
+                      "Active",
+                      "ReportingGroup",
+                      "LeaveGroup",
+                      "AtdEnable",
+                      "AttendancePlc",
+                      "ACSEnable",
+                      "ESSEnable",
+                      "ESSDetail",
+                      "PunchMarkingviaESS",
+                      "Validation"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "LMUr1",
+                      "True",
+                      "",
+                      "LM_LeaveGrp_PaidLeave",
+                      "True",
+                      "",
+                      "True",
+                      "True",
+                      "True",
+                      "True",
+                      "Saved Successfully"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "And ",
+            "line": 20,
+            "name": "Create user from user configuration"
+          },
+          {
+            "result": {
+              "status": "undefined",
+              "duration": 0
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "Period",
+                      "Month",
+                      "Year",
+                      "LeaveID",
+                      "CreditMode",
+                      "CreditValue",
+                      "AccrPlcName",
+                      "SelectUsers",
+                      "UserIDs",
+                      "Validation"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Monthly",
+                      "0",
+                      "0",
+                      "CD",
+                      "Fixed",
+                      "1",
+                      "",
+                      "User Wise",
+                      "LMUr1",
+                      "Saved Successfully"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "When ",
+            "line": 23,
+            "name": "\"Credit\" Leave from Credit_Debit_Encashment page"
+          },
+          {
+            "result": {
+              "status": "undefined",
+              "duration": 0
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "UserID",
+                      "LeaveName",
+                      "Period",
+                      "Month",
+                      "Year",
+                      "Opening",
+                      "Credit",
+                      "Debit",
+                      "Encashment",
+                      "Availed",
+                      "Closing",
+                      "Overflow"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "LMUr1",
+                      "LM_CD_PaidLeave",
+                      "Monthly",
+                      "0",
+                      "0",
+                      "0.00",
+                      "1.00",
+                      "0.00",
+                      "0.00",
+                      "0.00",
+                      "1.00",
+                      "0.00"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "Then ",
+            "line": 26,
+            "name": "Verify Leave Balance in Leave Balance Page"
+          },
+          {
+            "result": {
               "status": "passed",
-              "duration": 1069939500
+              "duration": 628849800
             },
             "keyword": "After",
             "hidden": true
