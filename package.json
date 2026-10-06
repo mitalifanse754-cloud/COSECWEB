@@ -17,12 +17,22 @@
   "devDependencies": {
     "@cucumber/cucumber": "^13.2.1",
     "@playwright/test": "^1.62.1",
-    "@types/node": "^26.5.0",
+    "@types/node": "^26.6.4",
+    "allure-playwright": "^3.13.0",
     "concurrently": "^10.0.5",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.2"
   },
   "dependencies": {
-    "D": "^1.0.0"
+    "@axe-core/playwright": "^4.13.0",
+    "@faker-js/faker": "^10.6.0",
+    "ajv": "^8.20.0",
+    "csv-parse": "^7.0.3",
+    "D": "^1.0.0",
+    "dotenv": "^18.0.5",
+    "exceljs": "^4.4.0",
+    "luxon": "^3.7.2",
+    "mssql": "^12.7.3",
+    "xlsx": "^0.18.5"
   }
 }

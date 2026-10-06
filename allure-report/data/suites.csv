@@ -1,0 +1,5 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","26505","login user with sa and admin in cosec using csv","chromium","2026-09-28","passed","2026-09-28","","parameterize_3csv.spec.ts","",""
+"","3187","login user with sa1 and admin in cosec using csv","chromium","2026-09-28","passed","2026-09-28","","parameterize_3csv.spec.ts","",""
+"","3503","login user with sa and admin123 in cosec using csv","chromium","2026-09-28","passed","2026-09-28","","parameterize_3csv.spec.ts","",""
+"","3139","login user with and in cosec using csv","chromium","2026-09-28","passed","2026-09-28","","parameterize_3csv.spec.ts","",""
