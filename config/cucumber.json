@@ -14,7 +14,7 @@
             "snippetInterface": "async-await"
         },
         "publishQuiet": true,
-        "parallel": 3,
+        "parallel": 1,
         "retry": 0,
         "dryRun": false,
         
