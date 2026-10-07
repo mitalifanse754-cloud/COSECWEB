@@ -16,7 +16,7 @@ on:
           - test:firefox
           - test:webkit
           - test:All
-        default: "test:chrome"
+        default: "test"
       browser:
             description: "Select browser"
             type: choice
