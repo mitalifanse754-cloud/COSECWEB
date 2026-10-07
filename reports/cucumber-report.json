@@ -11,16 +11,16 @@
         "steps": [
           {
             "result": {
-              "status": "passed",
-              "duration": 2273674799
+              "status": "skipped",
+              "duration": 0
             },
             "keyword": "Before",
             "hidden": true
           },
           {
             "result": {
-              "status": "passed",
-              "duration": 2463844900
+              "status": "skipped",
+              "duration": 0
             },
             "arguments": [],
             "keyword": "Given ",
@@ -32,8 +32,8 @@
           },
           {
             "result": {
-              "status": "passed",
-              "duration": 928176900
+              "status": "skipped",
+              "duration": 0
             },
             "arguments": [
               {
@@ -64,7 +64,7 @@
           },
           {
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             },
             "arguments": [
@@ -100,11 +100,14 @@
             ],
             "keyword": "And ",
             "line": 8,
-            "name": "Delete user via API"
+            "name": "Delete user via API",
+            "match": {
+              "location": "src\\tests\\step-definitions\\leaveModule.steps.ts:24"
+            }
           },
           {
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             },
             "arguments": [
@@ -143,11 +146,14 @@
             ],
             "keyword": "And ",
             "line": 14,
-            "name": "Create Leave"
+            "name": "Create Leave",
+            "match": {
+              "location": "src\\tests\\step-definitions\\leaveModule.steps.ts:29"
+            }
           },
           {
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             },
             "arguments": [
@@ -168,11 +174,14 @@
             ],
             "keyword": "And ",
             "line": 17,
-            "name": "Create Leave Group \"LM_LeaveGrp_PaidLeave\" with Pro-rata \"False\""
+            "name": "Create Leave Group \"LM_LeaveGrp_PaidLeave\" with Pro-rata \"False\"",
+            "match": {
+              "location": "src\\tests\\step-definitions\\leaveModule.steps.ts:34"
+            }
           },
           {
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             },
             "arguments": [
@@ -213,11 +222,14 @@
             ],
             "keyword": "And ",
             "line": 20,
-            "name": "Create user from user configuration"
+            "name": "Create user from user configuration",
+            "match": {
+              "location": "src\\tests\\step-definitions\\leaveModule.steps.ts:39"
+            }
           },
           {
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             },
             "arguments": [
@@ -256,11 +268,14 @@
             ],
             "keyword": "When ",
             "line": 23,
-            "name": "\"Credit\" Leave from Credit_Debit_Encashment page"
+            "name": "\"Credit\" Leave from Credit_Debit_Encashment page",
+            "match": {
+              "location": "src\\tests\\step-definitions\\leaveModule.steps.ts:44"
+            }
           },
           {
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             },
             "arguments": [
@@ -303,12 +318,15 @@
             ],
             "keyword": "Then ",
             "line": 26,
-            "name": "Verify Leave Balance in Leave Balance Page"
+            "name": "Verify Leave Balance in Leave Balance Page",
+            "match": {
+              "location": "src\\tests\\step-definitions\\leaveModule.steps.ts:49"
+            }
           },
           {
             "result": {
-              "status": "passed",
-              "duration": 628849800
+              "status": "skipped",
+              "duration": 0
             },
             "keyword": "After",
             "hidden": true

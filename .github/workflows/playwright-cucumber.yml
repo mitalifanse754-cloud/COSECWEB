@@ -1,0 +1,92 @@
+name: Playwright Cucumber Tests
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+  workflow_dispatch:
+    inputs:
+      test_suite:
+        description: "Select test suite"
+        type: choice
+        options:
+          - test
+          - test:chrome
+          - test:firefox
+          - test:webkit
+          - test:All
+        default: "test:chrome"
+      browser:
+            description: "Select browser"
+            type: choice
+            options:
+             - chromium
+             - firefix
+             - webkit
+            default : "chromium"
+      mode:
+            description: "Run mode"
+            type: choice
+            options:
+             - headless
+             - headed
+             
+            default : "headless"
+jobs:
+  cucumber:
+    timeout-minutes: 60
+    runs-on: windows-latest
+    steps:
+      - name: checkout Reporsitory
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps 
+
+    #   - name: Create .env file
+    #     run: copy Item .env.example .env
+
+      - name: Run Cucumber tests
+        run: xvfb-run --auto-servernum npm test
+      
+      #- name: Run Playwright tests
+        # run: 
+        #      |
+        #      $suite ="${{ github.event.inputs.test_suite || 'test'}}"
+        #      $browser ="${{ github.event.inputs.browser || 'chromium'}}"
+        #      $mode ="${{ github.event.inputs.mode || 'headless'}}"
+        #      $tag ="$suite -replace "test:",''
+        #      $browserFlag ="--project=$browser"
+        #      $modeFlag ="if (mode -eq 'headed') {'--headed'} else {''}
+        #      npx playwright test --grep "@tag" $browserFlag 4modeFlag --reporter=dot --output=test 
+        env:
+            CI: "1"
+            
+      - name: Upload Cucumber reports
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: cucumber-reports
+          path: reports/
+          if-no-files-found: ignore
+          retention-days: 30
+    
+
+      - name: Upload playwright HTML reports
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: plawright-report
+          path: plawright-report/
+          if-no-files-found: ignore
+          retention-days: 30
